@@ -105,5 +105,8 @@
     {
       "name": "Hans-Jørgen Vedvik (@hjvedvik)"
     }
-  ]
+  ],
+  "devDependencies": {
+    "object-assign": "^4.1.1"
+  }
 }

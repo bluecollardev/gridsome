@@ -1,4 +1,5 @@
 const jsYaml = require('js-yaml')
+const assign = require('object-assign')
 
 class YamlTransformer {
   static mimeTypes () {
@@ -9,8 +10,8 @@ class YamlTransformer {
     const data = jsYaml.load(content)
 
     return typeof data !== 'object' || Array.isArray(data)
-      ? { data }
-      : data
+      ? { ...assign({}, data, { fields: data }) }
+      : assign({}, data, { fields: data })
   }
 }
 
